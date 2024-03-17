@@ -1,4 +1,12 @@
-# configured aws provider with proper credentials
+terraform {
+  backend "s3" {
+    bucket = "techchallenge-rds-terraform	"
+    key = "terraform/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
+
 provider "aws" {
   region  = "us-east-1"
   profile = "alex-ferreira-sam-developer"
