@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "techchallenge-rds-terraform	"
+    bucket = "techchallenge-rds-terraform"
     key = "terraform/terraform.tfstate"
     region = "us-east-1"
   }
