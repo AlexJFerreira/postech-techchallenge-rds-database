@@ -13,54 +13,8 @@ provider "aws" {
 }
 
 
-# create default vpc if one does not exit
-#resource "aws_default_vpc" "default_vpc" {
-
-#  tags = {
-#    Name = "vpc-challenge"
-#  }
-#}
-
-
 # use data source to get all avalablility zones in region
 data "aws_availability_zones" "available_zones" {}
-
-
-# create a default subnet in the first az if one does not exit
-#resource "aws_default_subnet" "subnet_az1" {
-#  availability_zone = 
-#}
-
-# create a default subnet in the second az if one does not exit
-#resource "aws_default_subnet" "subnet_az2" {
-#  availability_zone = 
-#}
-
-# create security group for the web server
-#resource "aws_security_group" "webserver_security_group" {
-#  name        = "webserver security group"
-#  description = "enable http access on port 80"
-#  vpc_id      = 
-
-#  ingress {
-#    description      = "http access"
-#    from_port        = 
-#    to_port          = 
-#    protocol         = 
-#    cidr_blocks      = 
-#  }
-
-#  egress {
-#    from_port        = 
-#    to_port          = 
-#    protocol         = 
-#    cidr_blocks      = 
-#  }
-
-#  tags   = {
-#    Name = 
-#  }
-#}
 
 # create security group for the database
 resource "aws_security_group" "database_security_group" {
