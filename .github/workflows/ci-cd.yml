@@ -25,6 +25,11 @@ jobs:
         aws-secret-access-key: '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
         aws-region: us-east-1
 
+    - name: Add profile credentials to ~/.aws/credentials
+      run: |
+        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile alex-ferreira-sam-developer
+        aws configure set aws_secret_access_key ${{ secrets.AWS_ACCESS_KEY_ID }} --profile alex-ferreira-sam-developer
+
     - name: Terraform Init
       run: terraform init
       working-directory: terraform
